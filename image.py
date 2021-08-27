@@ -232,7 +232,7 @@ for (x, y, w, h) in faces:
 plt.imshow(img)
 img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
 cv2.imwrite("output/img4_wo.jpeg",img)
-path=r'C:/Users/T M RENUSHREE/Desktop/face mask detection/output/img4_wo.jpeg'
+path=r'output/img4_wo.jpeg'
 img1=cv2.imread(path)
 
 cv2.imshow("Face Mask Detection",img1)
