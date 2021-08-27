@@ -29,12 +29,12 @@ import matplotlib.pyplot as plt
 #print(tf._version_)
 model = tf.keras.models.load_model("Models/My_Model.h5")
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-cap = cv2.VideoCapture("C:/Users/T M RENUSHREE/Desktop/face mask detection/examples/p1.mp4")
+cap = cv2.VideoCapture("examples/Mask Detection Test Video.mp4")
 
 width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     
-writer = cv2.VideoWriter("output/p1.mp4",cv2.VideoWriter_fourcc(*'DIVX'),25,(width,height))
+writer = cv2.VideoWriter("output/Mask Detection Test Video.mp4",cv2.VideoWriter_fourcc(*'DIVX'),25,(width,height))
     
 while True:
     ret, img = cap.read()
@@ -73,12 +73,7 @@ while True:
                                 lineType = cv2.LINE_AA)
                 cv2.rectangle(img, (x, y), (x+w, y+h), (0,255,0), 5)
             else:
-                #data="please wear mask"
-                #anguage="en"
-                #myvar=gTTS(text=data,lang=language,slow=False)
-                #myvar.save("C:/Users/T M RENUSHREE/Desktop/face mask detection/newfile10.mp3")
-                #os.system("C:/Users/T M RENUSHREE/Desktop/face mask detection/beep.mp3")
-                
+                              
                 cv2.putText(img,
                                 text = "No Mask: " + str("%.2f" % round(withoutMask, 2)),
                                 org = (x-5,y-20),
